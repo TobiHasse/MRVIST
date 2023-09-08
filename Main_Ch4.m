@@ -23,7 +23,9 @@
 % estimated run time ::::::::::::::::::: 30 seconds
 
 % load in triangle
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+in_dir = 'C:\Users\thasse\Documents\MATLAB\test';
+cd( in_dir )
 % fname='TRH 205k upstream storage triangles.mat';
 % fname='TRH 205k downstream storage triangles.mat';
 fname='TRH 205k up & downstream storage triangles.mat';
@@ -31,7 +33,10 @@ load(fname, 'pt_bar_dist', 'vert_dist' )
 load('params_storage.mat', 'time_step_years' )
 
 % set the output folder for Chapter 4
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+out_dir = 'C:\Users\thasse\Documents\MATLAB\test\Ch4 diss';
+cd( out_dir )
+
 Ch4_storage_variability( pt_bar_dist, vert_dist, time_step_years )
 
 %% Channel length, deposition and erosion volumes, and cross correlation 
@@ -39,8 +44,9 @@ Ch4_storage_variability( pt_bar_dist, vert_dist, time_step_years )
 
 % estimated run time ::::::::::::::::::: 2 minutes
 
-clear
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+clearvars -except in_dir out_dir
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+cd( in_dir )
 load('Hasse_211ka_30yr_A3_Cfo24_2Eo_offset.mat','riv2')
 load('Hasse_211ka_30yr_A3_Cfo24_2Eo.mat','riv','B')
 % load('code cleanup_30yr_A16_Cfo0.010_2Eo.mat')
@@ -50,7 +56,8 @@ load params_storage.mat pix_per_chan x_start x_end time_step_years
 load params_reaches.mat
 
 % set the output folder for Chapter 4
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+cd( out_dir )
 
 beep; pause(1); beep
 
