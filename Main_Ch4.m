@@ -86,10 +86,12 @@ for i=1:numel(files)
         rl = reach_length(i,:);
     end
     % input folder
-    cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+%     cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+    cd( in_dir )
     load(files{i});
     % output folder
-    cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+%     cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+    cd( out_dir )
 
 length_v_volume( files{i}, rl, time_step_years, ...
     pt_bar_dist, vert_dist, pb_age_dist, vd_age_dist )
@@ -103,14 +105,15 @@ disp('finished')
 % estimated run time ::::::::::::::::::: 1 minute
 
 % load in age and storage distributions
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+cd( in_dir )
 fname = 'TRH 205k upstream storage triangles.mat';
 load(fname)
 load('params_storage.mat', 'time_step_years' )
 
 % set the output folder for Chapter 4
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
-
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch4\Figures
+cd( out_dir )
 % remove terraces ( possibly redundant ) the original storage distribution 
 % includes 'terrace' from prior to model start. removed from updated files
 pt_bar_dist = fliplr(tril(fliplr(pt_bar_dist),-2)); %-2
